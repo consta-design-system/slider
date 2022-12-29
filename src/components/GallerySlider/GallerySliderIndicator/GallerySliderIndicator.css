@@ -1,0 +1,83 @@
+.sli--GallerySliderIndicator {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: var(--gallery-slider-indicator-width);
+  max-width: var(--gallery-slider-indicator-width);
+  min-height: var(--gallery-slider-indicator-height);
+  max-height: var(--gallery-slider-indicator-height);
+  background: var(--color-bg-default);
+  gap: var(--space-xs);
+
+  &_navPosition {
+    &_bottom {
+      --gallery-slider-indicator-width: 100%;
+      --gallery-slider-indicator-height: var(--space-xl);
+      flex-direction: row;
+
+      &.sli--GallerySliderIndicator_indicatorsType_photo {
+        --gallery-slider-indicator-height:
+          calc(
+            var(--space-3xl) + var(--space-m)
+          );
+      }
+    }
+
+    &_left {
+      --gallery-slider-indicator-width: var(--space-xl);
+      --gallery-slider-indicator-height: 100%;
+      flex-direction: column;
+
+      &.sli--GallerySliderIndicator_indicatorsType_photo {
+        --gallery-slider-indicator-width:
+          calc(
+            var(--space-3xl) + var(--space-m)
+          );
+      }
+    }
+  }
+
+  &-Image {
+    --indicator-image-border-color: transparent;
+    overflow: hidden;
+    width: var(--space-3xl);
+    height: var(--space-3xl);
+    border: var(--space-3xs) solid var(--indicator-image-border-color);
+    border-radius: var(--control-radius);
+    transition: border-color 0.3s;
+
+    & > img {
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover;
+    }
+
+    &.tns-nav-active {
+      --indicator-image-border-color: var(--color-control-bg-active);
+    }
+  }
+
+  &-Dot {
+    width: var(--space-xs);
+    height: var(--space-xs);
+    background-color: var(--color-typo-ghost);
+    border-radius: var(--control-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &.tns-nav-active {
+      background-color: var(--color-typo-brand);
+    }
+  }
+
+  &-Text,
+  &-Icon {
+    color: var(--color-typo-ghost);
+    transition: color 0.3s;
+
+    &.tns-nav-active {
+      color: var(--color-typo-brand);
+    }
+  }
+}

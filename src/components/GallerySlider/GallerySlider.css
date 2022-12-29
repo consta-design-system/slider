@@ -1,0 +1,45 @@
+.sli--GallerySlider {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-default);
+
+  &_navPosition {
+    &_bottom {
+      flex-direction: column-reverse;
+    }
+
+    &_left {
+      flex-direction: row;
+    }
+  }
+
+  &-Slider {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-Item {
+    width: 100%;
+    height: 100%;
+  }
+
+  & .tns-outer {
+    width: 100%;
+    height: 100%;
+
+    & .tns-ovh,
+    & .tns-inner {
+      height: 100%;
+    }
+
+    & > .tns-liveregion,
+    & > .tns-controls {
+      display: none;
+    }
+  }
+}
